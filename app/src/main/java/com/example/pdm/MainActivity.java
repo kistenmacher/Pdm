@@ -11,57 +11,24 @@ import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity{
 
-    Button btn;
-    private EditText editCelcius;
+    Button btnAula2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        int i = 0;
-        btn = findViewById(R.id.button1);
-        editCelcius = findViewById(R.id.nrCelcius);
-        btn.setOnClickListener(new View.OnClickListener() {
+
+        btnAula2 = findViewById(R.id.btnAula2);
+        btnAula2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                abrirTelaNova(v);
+                abrirAula2(v);
             }
         });
-
-        Log.d("CICLO", "onCreate");
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        Log.d("CICLO", "onStart");
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Log.d("CICLO", "onResume");
-    }
-
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        Log.d("CICLO", "onRestart");
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Log.d("CICLO", "onDestroy");
-    }
-
-    public void abrirTelaNova(View view) {
-        String celcius = "";
-        if(editCelcius.getText() != null) {
-            celcius = editCelcius.getText().toString();
-        }
-        Intent intent = new Intent(this, OutraActivity.class);
-        intent.putExtra("celcius", celcius);
+    public void abrirAula2(View view) {
+        Intent intent = new Intent(this, Aula2Activity.class);
         startActivity(intent);
     }
 
